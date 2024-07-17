@@ -8,7 +8,7 @@ const Viewproduct = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:5999/productdetails')
+        axios.get('https://fakestoreapi.com/products')
             .then((res) => {
                 setRows(res.data);
                 console.log(res);
@@ -39,19 +39,19 @@ const Viewproduct = () => {
                 <Card sx={{ minWidth: 275, mb: 3, boxShadow: 3, '&:hover': { boxShadow: 6 } }} key={index}>
                     <CardContent>
                         <Typography variant="h6" component="div" gutterBottom>
-                            {row.productName}
+                            {row.title}
                         </Typography>
 
                         <Typography variant="subtitle1" color="text.secondary">
-                            Price: ${row.productPrice}
+                            Price: ${row.price}
                         </Typography>
 
                         <Typography variant="body2" color="text.secondary" paragraph>
-                            {row.productDescription}
+                            {row.description}
                         </Typography>
 
                         <Typography variant="body2" color="text.secondary">
-                            Category: {row.productCategory}
+                            Category: {row.category}
                         </Typography>
 
                         {/* Uncomment and style the image if available */}
